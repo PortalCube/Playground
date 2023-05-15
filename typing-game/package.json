@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "hangul-js": "^0.2.6"
+  },
+  "name": "typing-game",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": ""
+}

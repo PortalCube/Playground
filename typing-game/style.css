@@ -1,0 +1,10 @@
+p, input {
+    font-family: "나눔바른고딕", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 18pt;
+    width: 900px;
+}
+
+p {
+    margin: 20px 0px;
+}

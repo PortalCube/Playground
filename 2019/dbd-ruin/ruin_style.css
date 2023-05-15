@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Nanum+Gothic|Roboto');
+
+/*
+'Roboto'
+'Nanum Gothic'
+'Do Hyeon'
+*/
+
+/* 스타일 영역 */
+
+* {
+    font-family: 'Nanum Gothic', '맑은 고딕', Arial, Helvetica, sans-serif;
+}
+
+.font-dohyeon { font-family: 'Roboto', 'Do Hyeon', 'Nanum Gothic', '맑은 고딕', Arial, Helvetica, sans-serif; }
+.font-nanum { font-family: 'Nanum Gothic', '맑은 고딕', Arial, Helvetica, sans-serif; }
+
+.side-bar {
+    min-height: 500px;
+    height:calc(100vh - 300px);
+    overflow-y: auto;
+}
+
+.img-fluid {
+    max-height:calc(100vh - 300px);
+    display: block;
+    margin: auto;
+}

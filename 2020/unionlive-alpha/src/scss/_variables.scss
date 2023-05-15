@@ -1,0 +1,98 @@
+// Fonts
+
+$font-main: "나눔스퀘어", Helvetica, Arial, sans-serif;
+$font-sub: "나눔고딕", Helvetica, Arial, sans-serif;
+
+// All Colors
+
+$color-black: #000000;
+$color-white: #ffffff;
+$color-100: #1a1a1a;
+$color-200: #333333;
+$color-300: #4d4d4d;
+$color-400: #666666;
+$color-500: #7f7f7f;
+$color-600: #999999;
+$color-700: #b3b3b3;
+$color-800: #cccccc;
+$color-900: #e5e5e5;
+$color-red: #ff0066;
+$color-green: #00cc66;
+$color-blue: #0099ff;
+$color-yellow: #ffcc33;
+$color-purple: #9933cc;
+$color-orange: #ff9900;
+$color-pink: #ff66cc;
+$color-teal: #339999;
+
+// Main Colors
+
+/* Contents 
+
+1. Main Color
+2. Lighter Color
+3. Darker Color
+
+*/
+
+// Manipulate Variables
+
+$alt1-lightness-percent: 5%;
+$alt2-lightness-percent: -10%;
+
+$light: $color-white;
+$light-alt1: adjust-color($light, $lightness: -7%);
+$light-alt2: adjust-color($light, $lightness: -15%);
+
+$gray: $color-800;
+$gray-alt1: adjust-color($gray, $lightness: $alt1-lightness-percent + 5%);
+$gray-alt2: adjust-color($gray, $lightness: $alt2-lightness-percent);
+
+$dark: $color-200;
+$dark-alt1: adjust-color($dark, $lightness: $alt1-lightness-percent + 5%);
+$dark-alt2: adjust-color($dark, $lightness: $alt2-lightness-percent);
+
+$red: $color-red;
+$red-alt1: adjust-color($red, $lightness: $alt1-lightness-percent + 10%);
+$red-alt2: adjust-color($red, $lightness: $alt2-lightness-percent);
+
+$green: $color-green;
+$green-alt1: adjust-color($green, $lightness: $alt1-lightness-percent - 3%);
+$green-alt2: adjust-color($green, $lightness: $alt2-lightness-percent);
+
+$blue: $color-blue;
+$blue-alt1: adjust-color($blue, $lightness: $alt1-lightness-percent);
+$blue-alt2: adjust-color($blue, $lightness: $alt2-lightness-percent);
+
+$yellow: $color-yellow;
+$yellow-alt1: adjust-color($yellow, $lightness: $alt1-lightness-percent + 5%);
+$yellow-alt2: adjust-color($yellow, $lightness: $alt2-lightness-percent);
+
+$purple: $color-purple;
+$purple-alt1: adjust-color($purple, $lightness: $alt1-lightness-percent + 5%);
+$purple-alt2: adjust-color($purple, $lightness: $alt2-lightness-percent);
+
+$orange: $color-orange;
+$orange-alt1: adjust-color($orange, $lightness: $alt1-lightness-percent);
+$orange-alt2: adjust-color($orange, $lightness: $alt2-lightness-percent);
+
+$pink: $color-pink;
+$pink-alt1: adjust-color($pink, $lightness: $alt1-lightness-percent);
+$pink-alt2: adjust-color($pink, $lightness: $alt2-lightness-percent);
+
+$teal: $color-teal;
+$teal-alt1: adjust-color($teal, $lightness: $alt1-lightness-percent);
+$teal-alt2: adjust-color($teal, $lightness: $alt2-lightness-percent);
+
+// Breakpoints
+
+// 0 ~ 600 : extra small
+// 600 ~ 768 : small
+// 768 ~ 992 : medium
+// 992 ~ 1200 : large
+// 1200 ~ : extralarge
+
+$breakpoint-small: 600px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-extralarge: 1200px;

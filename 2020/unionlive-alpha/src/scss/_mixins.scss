@@ -1,0 +1,187 @@
+@import "./_variables.scss";
+
+@mixin clearfix {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin device-xs {
+    @media only screen and (max-width: $breakpoint-small) {
+        @content;
+    }
+}
+
+@mixin device-sm {
+    @media only screen and (min-width: $breakpoint-small) {
+        @content;
+    }
+}
+
+@mixin device-md {
+    @media only screen and (min-width: $breakpoint-medium) {
+        @content;
+    }
+}
+
+@mixin device-lg {
+    @media only screen and (min-width: $breakpoint-large) {
+        @content;
+    }
+}
+
+@mixin device-xl {
+    @media only screen and (min-width: $breakpoint-extralarge) {
+        @content;
+    }
+}
+
+@mixin element-colors {
+    // Default is light
+    background-color: $light;
+    color: $dark;
+
+    &.light {
+        background-color: $light;
+        color: $dark;
+
+        &:hover {
+            background-color: $light-alt1;
+        }
+
+        &:active {
+            background-color: $light-alt2;
+        }
+    }
+
+    &.gray {
+        background-color: $gray;
+        color: $dark;
+
+        &:hover {
+            background-color: $gray-alt1;
+        }
+
+        &:active {
+            background-color: $gray-alt2;
+        }
+    }
+
+    &.dark {
+        background-color: $dark;
+        color: $color-white;
+
+        &:hover {
+            background-color: $dark-alt1;
+        }
+
+        &:active {
+            background-color: $dark-alt2;
+        }
+    }
+
+    &.red {
+        background-color: $red;
+        color: $color-white;
+
+        &:hover {
+            background-color: $red-alt1;
+        }
+
+        &:active {
+            background-color: $red-alt2;
+        }
+    }
+
+    &.green {
+        background-color: $green;
+        color: $color-white;
+
+        &:hover {
+            background-color: $green-alt1;
+        }
+
+        &:active {
+            background-color: $green-alt2;
+        }
+    }
+
+    &.blue {
+        background-color: $blue;
+        color: $color-white;
+
+        &:hover {
+            background-color: $blue-alt1;
+        }
+
+        &:active {
+            background-color: $blue-alt2;
+        }
+    }
+
+    &.yellow {
+        background-color: $yellow;
+        color: $dark;
+
+        &:hover {
+            background-color: $yellow-alt1;
+        }
+
+        &:active {
+            background-color: $yellow-alt2;
+        }
+    }
+
+    &.purple {
+        background-color: $purple;
+        color: $color-white;
+
+        &:hover {
+            background-color: $purple-alt1;
+        }
+
+        &:active {
+            background-color: $purple-alt2;
+        }
+    }
+
+    &.orange {
+        background-color: $orange;
+        color: $color-white;
+
+        &:hover {
+            background-color: $orange-alt1;
+        }
+
+        &:active {
+            background-color: $orange-alt2;
+        }
+    }
+
+    &.pink {
+        background-color: $pink;
+        color: $color-white;
+
+        &:hover {
+            background-color: $pink-alt1;
+        }
+
+        &:active {
+            background-color: $pink-alt2;
+        }
+    }
+
+    &.teal {
+        background-color: $teal;
+        color: $color-white;
+
+        &:hover {
+            background-color: $teal-alt1;
+        }
+
+        &:active {
+            background-color: $teal-alt2;
+        }
+    }
+}

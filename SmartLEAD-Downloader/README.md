@@ -13,4 +13,4 @@ node main.js {uuid}
 
 uuid는 크롬 개발자 도구 같은걸로 플레이어 알아서 뜯어서 넣을것
 
-### MIT License
+### ⓒ Portalcube 2023. distributed under the MIT License.

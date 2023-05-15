@@ -25,4 +25,4 @@ npm i
 node main.js
 ```
 
-### MIT License
+### ⓒ Portalcube 2023. distributed under the MIT License.

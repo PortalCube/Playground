@@ -1,0 +1,8 @@
+오늘의 리겜 목표:
+
+- 로딩 만들기
+- 메인 화면 만들기
+- 곡 선택 화면 만들기
+- 사소한 최적화
+
+- 로딩 화면 by https://www.youtube.com/watch?v=OBW8XlDNjnY

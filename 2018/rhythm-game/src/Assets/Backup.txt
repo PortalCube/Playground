@@ -1,0 +1,141 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LongNoteBehaviour : MonoBehaviour {
+
+    private NoteManager manager;
+
+    private LineRenderer line;
+
+    public List<NoteData> Note { set; get; } = new List<NoteData>();
+
+    private int startIndex = 0;
+    private int endIndex = 0;
+
+    public int Status { set; get; } = 0;
+
+    public float altStartXPos;
+    public float altEndXPos;
+
+    public float startXPos; //롱노트가 위에서 보이기 시작하는 지점
+    public float endXPos; //롱노트가 밑에서 사라지기 시작하는 지점
+
+    public float startAngle = -1f; //롱노트가 위에서 시작하는 지점
+    public float endAngle = -1f; //롱노트가 밑에서 종료되는 지점
+
+    public int segments;
+
+    public float radius;
+
+    private void Awake()
+    {
+        manager = NoteManager.instance;
+    }
+
+    private void Start()
+    {
+        transform.localPosition = new Vector3(0, manager.pivotYPos, manager.pivotZPos);
+        transform.localEulerAngles = new Vector3(manager.noteStartAngle, 0, 0);
+
+        radius = manager.pivotGap;
+
+        line = gameObject.GetComponent<LineRenderer>();
+    }
+
+    void AddNoteData(NoteData data)
+    {
+        Note.Add(data);
+        if (data.NextNoteID != 0)
+        {
+            AddNoteData(manager.GetNoteByID(data.NextNoteID));
+        }
+    }
+
+    void Update()
+    {
+        CreatePoints();
+    }
+
+    void SetSegments(int seg)
+    {
+        segments = seg;
+        line.positionCount = segments;
+    }
+
+    void CreatePoints()
+    {
+        List<NoteData> activeNoteList = new List<NoteData>();
+
+        List<Vector3> pointList = new List<Vector3>();
+
+        float displayAngle;
+        float angle;
+
+        float x;
+        float y;
+        float z;
+
+        int index = 0;
+
+
+
+        for (int i = 0; i < Note.Count; i++)
+        {
+            if (Note[i].Status == 1)
+            {
+                activeNoteList.Add(Note[i]);
+            }
+        }
+
+        if (activeNoteList.Count == Note.Count)
+        {
+            // 모든 노트가 필드에 있음
+            SetSegments((int)Mathf.Abs(Note[0].GetAngle() - Note[Note.Count - 1].GetAngle()));
+        } else if (activeNoteList.Count == 0)
+        {
+            // 시작, 끝 노트가 필드에 없음
+            // 중간 노트 조차 없음..
+            // 시작, 끝 노트 추가
+            activeNoteList.Insert(0, manager.GetNoteByID(Note[0].PrevNoteID));
+            activeNoteList.Add(manager.GetNoteByID(Note[Note.Count - 1].NextNoteID));
+            SetSegments((int)Mathf.Abs(Note[0].GetAngle() - Note[Note.Count - 1].GetAngle()));
+        } else if (activeNoteList[0].ID == Note[0].ID)
+        {
+            // 시작 노트가 필드에 있음
+            // 마지막 중간 노트의 다음 노트 추가
+            activeNoteList.Add(manager.GetNoteByID(activeNoteList[activeNoteList.Count - 1].NextNoteID));
+            SetSegments((int)Mathf.Abs(activeNoteList[0].GetAngle() - activeNoteList[activeNoteList.Count - 1].GetAngle()));
+        } else if (activeNoteList[activeNoteList.Count - 1].ID == Note[Note.Count - 1].ID)
+        {
+            // 끝 노트가 필드에 있음
+            // 마지막 중간 노트의 다음 노트 추가
+            activeNoteList.Insert(0, manager.GetNoteByID(activeNoteList[0].PrevNoteID));
+            SetSegments((int)Mathf.Abs(activeNoteList[0].GetAngle() - activeNoteList[activeNoteList.Count - 1].GetAngle()));
+        } else
+        {
+            // 시작, 끝 노트가 필드에 없음
+            // 시작, 끝 노트 추가
+            activeNoteList.Insert(0, manager.GetNoteByID(activeNoteList[0].PrevNoteID));
+            activeNoteList.Add(manager.GetNoteByID(activeNoteList[activeNoteList.Count - 1].NextNoteID));
+            SetSegments((int)Mathf.Abs(activeNoteList[0].GetAngle() - activeNoteList[activeNoteList.Count - 1].GetAngle()));
+        }
+
+        angle = activeNoteList[0].GetAngle();
+        displayAngle = activeNoteList[activeNoteList.Count - 1].GetAngle() - angle;
+
+        for (int i = segments; i > 0; i--)
+        {
+            if (index + 1< activeNoteList.Count - 1 && activeNoteList[index + 1].GetAngle() > i)
+            {
+                index++;
+            }
+            x = Mathf.Lerp(activeNoteList[index].GetXPos(), activeNoteList[index + 1].GetXPos(), 1 - (i - activeNoteList[index + 1].GetAngle()) / (activeNoteList[index].GetAngle() - activeNoteList[index + 1].GetAngle()));
+            y = Mathf.Cos(Mathf.Deg2Rad * angle) * radius * -1;
+            z = Mathf.Sin(Mathf.Deg2Rad * angle) * radius * -1;
+            pointList.Add(new Vector3(x, y, z));
+            angle += (displayAngle / segments);
+        }
+        line.SetPositions(pointList.ToArray());
+    }
+}

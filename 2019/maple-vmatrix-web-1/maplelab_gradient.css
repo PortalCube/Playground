@@ -1,0 +1,27 @@
+/******************************
+          그라데이션
+******************************/
+
+.green-blue {
+    background-image: -moz-linear-gradient( 90deg, rgb(55,130,242) 0%, rgb(0,255,222) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(55,130,242) 0%, rgb(0,255,222) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(55,130,242) 0%, rgb(0,255,222) 100%);
+}
+  
+.blue-pink {
+    background-image: -moz-linear-gradient( 90deg, rgb(252,70,107) 0%, rgb(63,94,251) 99%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(252,70,107) 0%, rgb(63,94,251) 99%);
+    background-image: -ms-linear-gradient( 90deg, rgb(252,70,107) 0%, rgb(63,94,251) 99%);
+}
+
+.black-darker {
+    background-image: -moz-linear-gradient( 90deg, rgb(24,25,25) 0%, rgb(45,45,45) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(24,25,25) 0%, rgb(45,45,45) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(24,25,25) 0%, rgb(45,45,45) 100%);
+}
+
+.orange-darker {
+    background-image: -moz-linear-gradient( 90deg, rgb(180,107,11) 0%, rgb(255,161,39) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(180,107,11) 0%, rgb(255,161,39) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(180,107,11) 0%, rgb(255,161,39) 100%);
+}

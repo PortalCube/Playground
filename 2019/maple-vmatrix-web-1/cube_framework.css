@@ -1,0 +1,251 @@
+/******************************
+        메인 DIV 레이아웃
+******************************/
+
+body {
+    background-color: #ffffff;
+    color: #101010;
+}
+
+#container {
+    margin: auto;
+    padding: 50px;
+    padding-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 50px);
+    min-height: 500px;
+    min-width: 300px;
+}
+
+.panel {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    flex-flow: row wrap;
+
+    background-color: #00000055;
+}
+
+@media only screen and (max-width: 1024px) {
+    /* For low-res devices: */
+    #container {
+        padding: 20px;
+        padding-bottom: 0px;
+        height: calc(100vh - 20px);
+    }
+
+    .panel {
+        padding: 0px;
+        flex-direction: column;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+}
+
+/******************************
+        반응형 레이아웃
+******************************/
+
+/* For mobile phones: */
+
+[class*="col-"] {
+    width: 100%;
+}
+
+@media only screen and (min-width: 1024px) {
+    /* For desktop: */
+    .col-m-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 768px) {
+    /* For low-res devices: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-xs-1 {width: 8.33%;}
+    .col-xs-2 {width: 16.66%;}
+    .col-xs-3 {width: 25%;}
+    .col-xs-4 {width: 33.33%;}
+    .col-xs-5 {width: 41.66%;}
+    .col-xs-6 {width: 50%;}
+    .col-xs-7 {width: 58.33%;}
+    .col-xs-8 {width: 66.66%;}
+    .col-xs-9 {width: 75%;}
+    .col-xs-10 {width: 83.33%;}
+    .col-xs-11 {width: 91.66%;}
+    .col-xs-12 {width: 100%;}
+}
+
+
+
+/******************************
+        타이틀 레이아웃
+******************************/
+
+#header {
+    text-align: left;
+    font-weight: 200;
+    height: 100px;
+    border-bottom: 3px solid #101010;
+    padding: 0 0 30px 0;
+}
+
+#header p {
+    margin: -12px 0;
+}
+
+#title {
+    font-size: 64pt;
+}
+
+#subtitle {
+    font-size: 24pt;
+    font-family: 'Roboto', 'Nanum Gothic', '맑은 고딕', Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 1024px) {
+    /* For low-res devices: */
+
+    #header {
+        height: 50px;
+    }
+
+    #header p {
+        margin: -8px 0;
+    }
+    
+    #title {
+        font-size: 36pt;
+        text-align: center;
+    }
+
+    #subtitle {
+        font-size: 16pt;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+
+    #header {
+        height: 20px;
+    }
+
+    #header p {
+        margin: -6px 0;
+    }    
+
+    #title {
+        font-size: 24pt;
+        text-align: center;
+    }
+
+    #subtitle {
+        font-size: 12pt;
+        text-align: center;
+    }
+}
+
+/******************************
+        하단 스타일
+******************************/
+
+#footer {
+    margin: 20px 0;
+}
+
+#footer .btn{
+    padding: 0px 20px;
+    margin: 0 15px;
+}
+
+@media only screen and (max-width: 1024px) {
+    /* For low-res devices: */
+
+    #footer {
+        margin: 10px 0;
+    }
+    
+    #footer .btn {
+        padding: 0px 10px;
+        margin: 0 10px;
+        font-size: 24pt;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+}
+
+/******************************
+        버튼 스타일
+******************************/
+
+.btn {
+    height: 60px;
+    border: 0;
+    border-radius: 15px;
+    background-color: #ffffff;
+    text-align: center;
+    font-size: 36pt;
+
+    cursor: pointer;
+
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    transition: -moz-box-shadow 0.3s;
+    transition: -webkit-box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+
+    display: inline-block;
+}
+
+.btn:hover, .btn:active {
+    -moz-box-shadow:    inset 0 0 15px #000000aa;
+    -webkit-box-shadow: inset 0 0 15px #000000aa;
+    box-shadow:         inset 0 0 15px #000000aa;
+}
+
+.white-text {
+    color: #ffffff;
+}
+
+.black-text {
+    color: #101010;
+}

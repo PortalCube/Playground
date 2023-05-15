@@ -1,5 +1,7 @@
 # bluearchive-web
 
+![screenshot.png](screenshot.png)
+
 블루 아카이브 미래시를 웹으로 만들어볼까 하면서 끄적인 코드
 
 ## Project Setup

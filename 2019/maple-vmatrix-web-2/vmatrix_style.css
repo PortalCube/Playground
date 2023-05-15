@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Nanum+Gothic|Roboto');
+
+/*
+'Roboto'
+'Nanum Gothic'
+'Do Hyeon'
+*/
+
+/* 스타일 영역 */
+
+* {
+    font-family: 'Nanum Gothic', '맑은 고딕', Arial, Helvetica, sans-serif;
+}
+
+.font-dohyeon { font-family: 'Roboto', 'Do Hyeon', 'Nanum Gothic', '맑은 고딕', Arial, Helvetica, sans-serif; }
+.font-nanum { font-family: 'Nanum Gothic', '맑은 고딕', Arial, Helvetica, sans-serif; }
+
+#side-content .row div {
+    padding: 10px;
+}
+
+#center-content {
+    padding: 10px 0;
+}
+
+#footer {
+    padding: 10px;
+}
+
+#job-content .card {
+    width: 16rem;
+}
+
+.skill-description {
+    height: 500px;
+    object-fit: scale-down;
+}
+
+#coreSkillSelectCard > .skill-description {
+    height: 300px;
+}
+
+#skillSelectCard, #selectedSkillCard, #coreSkillSelectCard .card-body {
+    min-height: 250px;
+}
+
+.vertical-center{
+    margin-top: 7px;
+}
+
+.btn {
+    -webkit-transition: opacity 0.2s, background-color 0.2s;
+    transition: opacity 0.2s, background-color 0.2s;;
+}
+
+.btn-skill:disabled {
+    opacity: 0.25;
+}

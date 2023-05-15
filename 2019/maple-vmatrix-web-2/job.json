@@ -1,0 +1,304 @@
+[
+    {
+        "name": "히어로",
+        "category": "adventurer",
+        "image": "job02_bg.png",
+        "job": 1
+    },
+    {
+        "name": "팔라딘",
+        "category": "adventurer",
+        "image": "job99_bg.png",
+        "job": 1
+    },
+    {
+        "name": "다크나이트",
+        "category": "adventurer",
+        "image": "job99_bg.png",
+        "job": 1
+    },
+    {
+        "name": "아크메이지(불,독)",
+        "category": "adventurer",
+        "image": "job99_bg.png",
+        "job": 2
+    },
+    {
+        "name": "아크메이지(썬,콜)",
+        "category": "adventurer",
+        "image": "job99_bg.png",
+        "job": 2
+    },
+    {
+        "name": "비숍",
+        "category": "adventurer",
+        "image": "job03_bg.png",
+        "job": 2
+    },
+    {
+        "name": "보우마스터",
+        "category": "adventurer",
+        "image": "job04_bg.png",
+        "job": 3
+    },
+    {
+        "name": "신궁",
+        "category": "adventurer",
+        "image": "job99_bg.png",
+        "job": 3
+    },
+    {
+        "name": "패스파인더",
+        "category": "adventurer",
+        "image": "job36_bg.png",
+        "job": 3
+    },
+    {
+        "name": "나이트로드",
+        "category": "adventurer",
+        "image": "job05_bg.png",
+        "job": 4
+    },
+    {
+        "name": "섀도어",
+        "category": "adventurer",
+        "image": "job99_bg.png",
+        "job": 4
+    },
+    {
+        "name": "듀얼블레이드",
+        "category": "adventurer",
+        "image": "job06_bg.png",
+        "job": 4
+    },
+    {
+        "name": "바이퍼",
+        "category": "adventurer",
+        "image": "job99_bg.png",
+        "job": 5
+    },
+    {
+        "name": "캡틴",
+        "category": "adventurer",
+        "image": "job07_bg.png",
+        "job": 5
+    },
+    {
+        "name": "캐논슈터",
+        "category": "adventurer",
+        "image": "job08_bg.png",
+        "job": 5
+    },
+    {
+        "name": "소울마스터",
+        "category": "cygnus",
+        "image": "job10_bg.png",
+        "job": 1
+    },
+    {
+        "name": "미하일",
+        "category": "cygnus",
+        "image": "job11_bg.png",
+        "job": 1
+    },
+    {
+        "name": "플레임위자드",
+        "category": "cygnus",
+        "image": "job12_bg.png",
+        "job": 2
+    },
+    {
+        "name": "윈드브레이커",
+        "category": "cygnus",
+        "image": "job13_bg.png",
+        "job": 3
+    },
+    {
+        "name": "나이트워커",
+        "category": "cygnus",
+        "image": "job14_bg.png",
+        "job": 4
+    },
+    {
+        "name": "스트라이커",
+        "category": "cygnus",
+        "image": "job15_bg.png",
+        "job": 5
+    },
+    {
+        "name": "아란",
+        "category": "hero",
+        "image": "job23_bg.png",
+        "job": 1
+    },
+    {
+        "name": "에반",
+        "category": "hero",
+        "image": "job24_bg.png",
+        "job": 2
+    },
+    {
+        "name": "루미너스",
+        "category": "hero",
+        "image": "job25_bg.png",
+        "job": 2
+    },
+    {
+        "name": "메르세데스",
+        "category": "hero",
+        "image": "job26_bg.png",
+        "job": 3
+    },
+    {
+        "name": "팬텀",
+        "category": "hero",
+        "image": "job27_bg.png",
+        "job": 4
+    },
+    {
+        "name": "은월",
+        "category": "hero",
+        "image": "job28_bg.png",
+        "job": 5
+    },
+    {
+        "name": "블래스터",
+        "category": "resistance",
+        "image": "job17_bg.png",
+        "job": 1
+    },
+    {
+        "name": "데몬슬레이어",
+        "category": "resistance",
+        "image": "job99_bg.png",
+        "job": 1
+    },
+    {
+        "name": "데몬어벤져",
+        "category": "resistance",
+        "image": "job22_bg.png",
+        "job": 1
+    },
+    {
+        "name": "배틀메이지",
+        "category": "resistance",
+        "image": "job18_bg.png",
+        "job": 2
+    },
+    {
+        "name": "와일드헌터",
+        "category": "resistance",
+        "image": "job19_bg.png",
+        "job": 3
+    },
+    {
+        "name": "제논",
+        "category": "resistance",
+        "image": "job21_bg.png",
+        "job": 11
+    },
+    {
+        "name": "메카닉",
+        "category": "resistance",
+        "image": "job20_bg.png",
+        "job": 5
+    },
+    {
+        "name": "카이저",
+        "category": "nova",
+        "image": "job29_bg.png",
+        "job": 1
+    },
+    {
+        "name": "카데나",
+        "category": "nova",
+        "image": "job30_bg.png",
+        "job": 4
+    },
+    {
+        "name": "엔젤릭버스터",
+        "category": "nova",
+        "image": "job31_bg.png",
+        "job": 5,
+        "skill": [
+            {
+                "id": 60011216,
+                "name": "석세서"
+            },
+            {
+                "id": 65001100,
+                "name": "버블 스타"
+            },
+            {
+                "id": 65101001,
+                "name": "핑크 스커드"
+            },
+            {
+                "id": 65101100,
+                "name": "스팅 익스플로전"
+            },
+            {
+                "id": 65111002,
+                "name": "랜드 크래시"
+            },
+            {
+                "id": 65111101,
+                "name": "폴링스타"
+            },
+            {
+                "id": 65120011,
+                "name": "소울 시커 엑스퍼트"
+            },
+            {
+                "id": 65121002,
+                "name": "피니투라 페투치아"
+            },
+            {
+                "id": 65121003,
+                "name": "소울 레조넌스"
+            },
+            {
+                "id": 65121052,
+                "name": "슈퍼 노바"
+            },
+            {
+                "id": 65121100,
+                "name": "프라이멀 로어"
+            },
+            {
+                "id": 65121101,
+                "name": "트리니티"
+            }
+        ]
+    },
+    {
+        "name": "일리움",
+        "category": "lef",
+        "image": "job32_bg.png",
+        "job": 2
+    },
+    {
+        "name": "아크",
+        "category": "lef",
+        "image": "job33_bg.png",
+        "job": 5,
+        "skill": [
+            {
+                "id": 155121306,
+                "name": "황홀한 구속"
+            }
+        ]
+    },
+    {
+        "name": "제로",
+        "category": "etc",
+        "image": "job34_bg.png",
+        "job": 1
+    },
+    {
+        "name": "키네시스",
+        "category": "etc",
+        "image": "job35_bg.png",
+        "job": 2
+    }
+]

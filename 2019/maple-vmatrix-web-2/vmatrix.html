@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>MapleLab™</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="메이플스토리 코어 젬스톤 강화 사이트">
+    <meta name="keywords" content="Maplestory, 메이플스토리, 메이플, 유틸리티, 코어젬스톤, 강화배치기">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+    <script src="vmatrix_script.js"></script>
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" type="text/css" href="maplelab_gradient.css" />
+    <link rel="stylesheet" type="text/css" href="vmatrix_style.css" />
+
+    <!-- Font Awesome Icon -->
+    <script src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"></script>
+</head>
+
+<body onload="LoadJob()" class="d-flex flex-column" style="height: 100vh;">
+    <div class="modal fade" id="coreResultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resultModalLabel">코어 배치 결과</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                        <div class="d-flex justify-content-center">
+                                <div class="spinner-border" role="status">
+                                  <span class="sr-only">Loading...</span>
+                                </div>
+                              </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main role="main" class="flex-shrink-0">
+        <div class="jumbotron jumbotron-fluid p-4">
+            <div class="container">
+                <h1 class="font-dohyeon">코어 젬스톤 배치 유틸리티</h1>
+                <p>헬코강도 쉽고 빠르게 강화해봐요!</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div id="side-content" class="col-lg-3">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-12">
+                            <div id="currentJob" class="card">
+                                <img src="image/vmatrix/job_image/job00_bg.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center"><span class="badge badge-dark badge-pill"><i
+                                                class="fas fa-exclamation-triangle"></i></span></h5>
+                                    <h4 class="card-text text-center"><strong>직업을 선택하세요</strong></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-12">
+                            <nav class="nav nav-pills flex-column justify-content-center h-100" id="pills-tab"
+                                role="tablist" aria-orientation="vertical">
+                                <a class="nav-link active" id="select-job-tab" data-toggle="pill" href="#select-job"
+                                    role="tab" aria-controls="select-job" aria-selected="true">1. 직업 선택</a>
+                                <a class="nav-link" id="select-skill-tab" data-toggle="pill" href="#select-skill"
+                                    role="tab" aria-controls="select-skill" aria-selected="false">2. 강화할 스킬 선택</a>
+                                <a class="nav-link" id="select-core-tab" data-toggle="pill" href="#select-core"
+                                    role="tab" aria-controls="select-core" aria-selected="false">3. 가지고 있는 코어 입력</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div id="center-content" class="col-lg-9 p-2">
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="select-job" role="tabpanel"
+                            aria-labelledby="select-job-tab">
+                            <div class="row">
+                                <nav class="nav nav-tabs" id="job-content-tab" role="tablist">
+                                    <a class="nav-item nav-link active" id="job-adventurer-tab" href="#job-adventurer"
+                                        data-toggle="tab" role="tab" aria-selected="true"
+                                        aria-controls="job-adventurer">모험가</a>
+                                    <a class="nav-item nav-link" id="job-cygnus-tab" href="#job-cygnus"
+                                        data-toggle="tab" role="tab" aria-selected="false"
+                                        aria-controls="job-cygnus">시그너스 기사단</a>
+                                    <a class="nav-item nav-link" id="job-resistance-tab" href="#job-resistance"
+                                        data-toggle="tab" role="tab" aria-selected="false"
+                                        aria-controls="job-resistance">레지스탕스</a>
+                                    <a class="nav-item nav-link" id="job-hero-tab" href="#job-hero" data-toggle="tab"
+                                        role="tab" aria-selected="false" aria-controls="job-hero">영웅</a>
+                                    <a class="nav-item nav-link" id="job-nova-tab" href="#job-nova" data-toggle="tab"
+                                        role="tab" aria-selected="false" aria-controls="job-nova">노바</a>
+                                    <a class="nav-item nav-link" id="job-lef-tab" href="#job-lef" data-toggle="tab"
+                                        role="tab" aria-selected="false" aria-controls="job-lef">레프</a>
+                                    <a class="nav-item nav-link" id="job-etc-tab" href="#job-etc" data-toggle="tab"
+                                        role="tab" aria-selected="false" aria-controls="job-etc">기타</a>
+                                </nav>
+                            </div>
+                            <div class="row">
+                                <div class="tab-content" id="job-content">
+                                    <div class="tab-pane fade show active" id="job-adventurer" role="tabpanel"
+                                        aria-labelledby="job-adventurer-tab">
+                                        <div class="d-flex justify-content-center justify-content-sm-start flex-wrap">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="job-cygnus" role="tabpanel"
+                                        aria-labelledby="job-cygnus-tab">
+                                        <div class="d-flex justify-content-center justify-content-sm-start flex-wrap">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="job-resistance" role="tabpanel"
+                                        aria-labelledby="job-resistance-tab">
+                                        <div class="d-flex justify-content-center justify-content-sm-start flex-wrap">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="job-hero" role="tabpanel"
+                                        aria-labelledby="job-hero-tab">
+                                        <div class="d-flex justify-content-center justify-content-sm-start flex-wrap">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="job-nova" role="tabpanel"
+                                        aria-labelledby="job-nova-tab">
+                                        <div class="d-flex justify-content-center justify-content-sm-start flex-wrap">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="job-lef" role="tabpanel"
+                                        aria-labelledby="job-lef-tab">
+                                        <div class="d-flex justify-content-center justify-content-sm-start flex-wrap">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="job-etc" role="tabpanel"
+                                        aria-labelledby="job-etc-tab">
+                                        <div class="d-flex justify-content-center justify-content-sm-start flex-wrap">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="select-skill" role="tabpanel" aria-labelledby="select-skill-tab">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div id="skillDescriptionCard" class="card">
+                                        <img src="image/vmatrix/job_default.png" class="skill-description" alt="스킬 이미지">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div id="skillSelectCard" class="card">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">스킬 목록</h5>
+                                                    <div class="d-flex justify-content-center flex-wrap"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div id="selectedSkillCard" class="card">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">강화할 스킬</h5>
+                                                    <div class="d-flex justify-content-center flex-wrap"></div>
+                                                </div>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item">
+                                                        <button type="button" id="skill-next-button"
+                                                            class="btn btn-primary btn-block"
+                                                            onclick="$('#select-core-tab').tab('show');" disabled>다음 <i
+                                                                class="fas fa-angle-right"></i></button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="select-core" role="tabpanel" aria-labelledby="select-core-tab">
+                            <div class="row d-flex">
+                                <div class="col-lg-5 order-lg-1">
+                                    <div id="coreSkillSelectCard" class="card">
+                                        <img src="image/vmatrix/job_default.png" class="skill-description card-img-top"
+                                            alt="스킬 이미지">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <h5 class="card-title">스킬 목록</h5>
+                                                <div id="coreSkillList" class="d-flex justify-content-center flex-wrap">
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <h5 class="card-title">추가할 코어</h5>
+                                                <div id="coreSelectedSkill"
+                                                    class="d-flex justify-content-center flex-wrap">
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <button type="button" id="core-add-button"
+                                                    class="btn btn-primary btn-block" onclick="AddCore();"
+                                                    disabled>추가</button>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="dropdown">
+                                                    <button type="button" id="start-place-button"
+                                                        class="btn btn-success btn-block dropdown-toggle"
+                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">코어
+                                                        배치 시작!</button>
+                                                    <div class="dropdown-menu" aria-labelledby="start-place-button">
+                                                        <h6 class="dropdown-header">스킬을 몇 번 중첩할지 선택하세요</h6>
+                                                        <div class="dropdown-divider"></div>
+                                                        <button type="button" class="dropdown-item"
+                                                            onclick="StartPlace(2);" data-toggle="modal"
+                                                            data-target="#coreResultModal">2중첩</button>
+                                                        <button type="button" class="dropdown-item"
+                                                            onclick="StartPlace(3);" data-toggle="modal"
+                                                            data-target="#coreResultModal">3중첩</button>
+                                                        <button type="button" class="dropdown-item"
+                                                            onclick="StartPlace(4);" data-toggle="modal"
+                                                            data-target="#coreResultModal">4중첩</button>
+                                                        <button type="button" class="dropdown-item"
+                                                            onclick="StartPlace(5);" data-toggle="modal"
+                                                            data-target="#coreResultModal">5중첩</button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="core_list_panel" class="col-lg-7 order-lg-0"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">코어 젬스톤 배치 유틸리티 v1.0 with </span><a href="https://portalcube.github.io/MapleLab/"
+                class="text-info">MapleLab™ Project</a>
+        </div>
+    </footer>
+</body>
+
+</html>

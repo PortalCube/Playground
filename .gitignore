@@ -2,6 +2,11 @@
 
 .\$*/
 
+# SmartLEAD Downloader temp files
+
+2023/SmartLEAD-Downloader/out
+2023/SmartLEAD-Downloader/download
+
 # Created by https://www.toptal.com/developers/gitignore/api/node
 # Edit at https://www.toptal.com/developers/gitignore?templates=node
 
